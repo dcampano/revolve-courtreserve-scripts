@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CourtReserve - Additional Features
 // @namespace    http://revolvepickleball.com/
-// @version      1.6
+// @version      1.7
 // @description  Add additional features for CourtReserve
 // @author       You
 // @match        https://app.courtreserve.com/*
@@ -30,7 +30,7 @@ waitForKeyElements (
 function appendProRateButton (jNode) {
     var numtext = "ADDSDF";
 
-    jNode.prepend ('<button type="button" onclick="dc_ProRateMembership()" class="btn btn-warning">Pro-Rate - Click After Choosing Frequency</button>');
+    jNode.prepend ('<button type="button" onclick="dc_ProRateMembership()" class="btn btn-warning">Pro-Rate - Click BEFORE Assigning Membership</button>');
 }
 
 function checkForCardOnFile(jNode) {
