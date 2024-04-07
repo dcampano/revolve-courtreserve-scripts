@@ -49,7 +49,7 @@ function dc_ProRateMembership() {
         frequency = $("#SetMembership_PaymentFrequency option:selected").text();
     }
     var today = new Date();
-    var today_str = (today.getMonth() + 1) + '/' + today.getDay() + '/' + today.getFullYear();
+    var today_str = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
     var next_bill = new Date();
     var next_bill_str;
     if(frequency == 'Monthly') {
