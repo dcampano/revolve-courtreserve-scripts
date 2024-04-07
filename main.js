@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CourtReserve - Additional Features
 // @namespace    http://revolvepickleball.com/
-// @version      1.5
+// @version      1.6
 // @description  Add additional features for CourtReserve
 // @author       You
 // @match        https://app.courtreserve.com/*
@@ -22,10 +22,25 @@ waitForKeyElements (
     appendProRateButton
 );
 
+waitForKeyElements (
+    "#PaymentMethod_Type_4:checked",
+    checkForCardOnFile
+);
+
 function appendProRateButton (jNode) {
     var numtext = "ADDSDF";
 
     jNode.prepend ('<button type="button" onclick="dc_ProRateMembership()" class="btn btn-warning">Pro-Rate - Click After Choosing Frequency</button>');
+}
+
+function checkForCardOnFile(jNode) {
+
+    console.log('clicked');
+    setTimeout(() => {
+        if($("#creditCardOnFile-li.hide").length > 0) {
+            alert('Member Might Not Have Card On File: Swipe Card Instead');
+        }
+   }, 100);
 }
 
 function dc_ProRateMembership() {
@@ -34,7 +49,7 @@ function dc_ProRateMembership() {
         frequency = $("#SetMembership_PaymentFrequency option:selected").text();
     }
     var today = new Date();
-    var today_str = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+    var today_str = (today.getMonth() + 1) + '/' + today.getDay() + '/' + today.getFullYear();
     var next_bill = new Date();
     var next_bill_str;
     if(frequency == 'Monthly') {
