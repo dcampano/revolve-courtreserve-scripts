@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CourtReserve - Additional Features
 // @namespace    http://revolvepickleball.com/
-// @version      1.7
+// @version      1.8
 // @description  Add additional features for CourtReserve
 // @author       You
 // @match        https://app.courtreserve.com/*
