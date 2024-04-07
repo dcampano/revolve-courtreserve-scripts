@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CourtReserve - Additional Features
 // @namespace    http://revolvepickleball.com/
-// @version      1.4
+// @version      1.5
 // @description  Add additional features for CourtReserve
 // @author       You
 // @match        https://app.courtreserve.com/*
@@ -34,7 +34,7 @@ function dc_ProRateMembership() {
         frequency = $("#SetMembership_PaymentFrequency option:selected").text();
     }
     var today = new Date();
-    var today_str = (today.getMonth() + 1) + '/' + today.getDay() + '/' + today.getFullYear();
+    var today_str = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
     var next_bill = new Date();
     var next_bill_str;
     if(frequency == 'Monthly') {
